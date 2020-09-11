@@ -1,0 +1,103 @@
+import React from 'react';
+import {useHistory} from 'react-router-dom'
+import '../../Css/CartSection.css'
+import {useSelector, useDispatch} from 'react-redux'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {Resetcount, ResetData, CountReducer} from '../../ReduxStore/ActionCreator'
+
+
+
+function CartSection(props) {
+    
+    const history = useHistory()
+    const dispatch = useDispatch()
+    let OrderContainer = useSelector(state => state.Food.Food)
+    let RateContainer = useSelector(state => state.Food.Rate)
+    let total;
+  
+
+    const EmptyCart = ()=>{
+        return(
+            <React.Fragment>
+              <h4 className="empty">Empty cart</h4>
+              <h6 className="empty">you must order food before buy.</h6>
+            </React.Fragment>
+        )
+    }
+
+
+    const BuyHandler = e => {
+        let sure = window.confirm("Are you confirm to buy")
+        if (sure){
+        dispatch(Resetcount())
+        dispatch(ResetData())
+         history.push('/purchased')
+        }else return null
+     }
+
+
+     const ResetHandler = e => {
+        dispatch(Resetcount())
+        dispatch(ResetData())
+     }
+
+
+     const ReduceHandler = e => {
+          let selectedarray = RateContainer[e.target.id]
+          OrderContainer.splice(e.target.id,1)
+          RateContainer.splice(e.target.id,1)
+          total = total - selectedarray
+          history.push('/cart')
+          dispatch(CountReducer())
+     }
+
+
+    return ( 
+        <div>  
+            <div className="cart">
+               <h1 className="cart-title">Cart page</h1>
+             </div>
+
+              <div className="orders">
+                {
+                 RateContainer[0] === undefined ? EmptyCart()
+                 : 
+                 (
+                <section className='table-grid table-responsive' id="section">
+                  <table className='table '>
+                    <thead className="thead"><tr><th>OrderName</th></tr></thead>
+                    <tbody className='parent'>{OrderContainer.map((item,i) => <tr id={i} className='tdchanger'><td>{item}</td></tr>)}</tbody>
+                  </table>
+            
+                  <table className='table '>
+                    <thead className="thead" ><tr><th className='w-auto'>Rate</th></tr></thead>
+                    <tbody className='parent' >{RateContainer.map((rate,i) => <tr id={i} className='tdchanger'><td className='w-auto'>{rate}</td></tr>)}
+                        <tr className='tc'><td><b> Total Cost : {total = RateContainer.reduce((acc, cur)=> acc + cur )}
+                        </b><br/><br/>
+                        <button className="btn btn-primary btn-sm ownprop ones" onClick={BuyHandler} >Buy</button>
+                        <button className="btn btn-primary btn-sm ownprop reset" onClick={ResetHandler} >ResetCart</button>
+                        </td></tr>
+                    </tbody>
+                  </table>
+                  <table className='table'>
+                    <thead className="thead " ><tr><th>-</th></tr></thead>
+                    <tbody className='parent2' >{RateContainer.map((rate,i) => <tr id={i} className='tdchanger2'><td>
+                       <button id={i} className='btn btn-danger reduce'
+                       onClick={ReduceHandler}>-</button>
+                        </td></tr>)
+                        }
+                     </tbody> 
+                   </table>
+              </section>             
+                 )        
+                 }
+        </div>
+</div>
+    );
+}
+
+
+export default CartSection;
+
+
+

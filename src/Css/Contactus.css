@@ -1,0 +1,21 @@
+.contact{
+    width: 100%;
+    min-height: 8.05cm;
+    background-color: #2c2929;
+    color: rgb(175, 175, 175);
+    padding-left: 1.8cm;
+}
+.contact h2{
+    text-decoration: underline;
+}
+.contact .con{
+    margin-left: 1cm;
+}
+.contact h6{
+    margin-left: 0.5cm;
+}
+.contact .icons{
+position: relative;
+top: 0.55cm;
+right: 0.2cm;
+}

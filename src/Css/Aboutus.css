@@ -1,0 +1,23 @@
+#container {
+    font-family: Arial, Helvetica, sans-serif !important;
+    width: 80%;
+    margin: 5px auto;
+}
+.aboutsection{
+    width: 100%;
+    height: 14.5cm;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/hotel.jpg');
+}
+.aboutheader {
+     margin-left: 10vw;
+    padding-top: 9cm;
+    color: white;
+}
+
+.boldheader {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(77, 83, 75);
+}

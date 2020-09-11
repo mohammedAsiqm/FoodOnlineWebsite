@@ -1,0 +1,65 @@
+.cart{
+    height: 8cm;
+    background-image: url('../img/kitchen3.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.cart-title{
+    color: white;
+    text-align: center;
+    padding-top: 3cm;
+}
+.orders{
+    position: relative;
+   width: 95%;
+   margin: 0.3cm auto;
+   padding: 0.7cm;
+   border-radius: 0.6cm;
+   box-shadow: 1px 1px 3px black,-1px -1px 5px white;
+   min-height: 4cm;
+}
+.orders .empty{
+    text-align: center;
+}
+
+.table-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.ownprop{
+   
+    width: 4cm;
+    margin-right: 0.3cm;
+    background-color: rgb(57, 190, 57) !important;
+}
+.ownprop:focus,.ownprop:active {
+    box-shadow: none !important;
+    outline: none !important;
+}
+.ownprop:active{
+    color: rgb(106, 126, 106) !important;
+}
+.reduce {
+    height: 01cm;
+    width: 1cm;
+    padding: 0px !important;
+    text-align: center;
+}
+.table .tdchanger td{
+    padding: 0.52cm !important;
+}
+.table td {
+    border: none !important;
+}
+.thead{
+    background-color: rgb(230, 224, 214);
+    color: rgb(51, 35, 35);
+}
+.reset {
+    background-color: rgba(235, 14, 14, 0.616) !important;
+}
+.muta {
+  position: absolute;
+  right: 10%;
+}
