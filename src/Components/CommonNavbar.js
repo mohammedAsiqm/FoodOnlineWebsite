@@ -10,7 +10,7 @@ function CommonNavbar() {
 
     return (
         <header className="topnav">
-              <h1 className="h1">ABI FOODS</h1>
+              <h1 className="h1">PARVES FOODS</h1>
               <input type='checkbox' id="check"/>
               <label for='check'>
               <i className='fas fa-bars baricon' id='icon'></i><span className={CountBatch>0?"batch1 baricon":'baricon'} > {CountBatch===0 ? null : CountBatch}</span></label>

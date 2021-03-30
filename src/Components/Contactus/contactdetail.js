@@ -12,8 +12,8 @@ function Contactdetail(props) {
               <span class="con">91+ 733858999</span><br/><br/>
               <i class="fa fa-envelope icons"></i>
               <h6>Email</h6>
-              <span class="con">abifoods@gmail.com</span><br/> 
-              <span class="con">themoraafoods@gmail.com</span>
+              <span class="con">parvesfoods@gmail.com</span><br/> 
+              <span class="con">foodsonline@gmail.com</span>
         </div>
     );
 }
